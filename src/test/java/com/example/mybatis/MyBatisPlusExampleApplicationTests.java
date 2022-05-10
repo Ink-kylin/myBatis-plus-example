@@ -13,16 +13,26 @@ import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.data.jdbc.DataJdbcTest;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Collections;
 import java.util.List;
 
-@SpringBootTest
+@DataJdbcTest
+@Transactional(propagation = Propagation.NOT_SUPPORTED)
 class MyBatisPlusExampleApplicationTests {
 
     @Autowired
     private UserMapper userMapper;
+
+    @Test
+    void context(){
+
+
+    }
 
     @Test
     void contextLoads() {

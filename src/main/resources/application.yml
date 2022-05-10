@@ -2,7 +2,10 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/db2019?characterEncoding=utf8&connectTimeout=1000&socketTimeout=100002&autoReconnect=true&useUnicode=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://127.0.0.1:3306/laboratory?characterEncoding=utf8&connectTimeout=1000&socketTimeout=100002&autoReconnect=true&useUnicode=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
     username: albert
     password: kylin
     type: com.mysql.cj.jdbc.MysqlDataSource
+
+server:
+  port: 9010
