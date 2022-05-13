@@ -1,0 +1,19 @@
+
+###
+GET http://localhost:9010/user
+
+###
+GET http://localhost:9010/enums
+Content-Type: application/json
+
+
+[
+  {
+    "number": 10,
+    "description": "十分制"
+  },
+  {
+    "number": 100,
+    "description": "百分制"
+  }
+]

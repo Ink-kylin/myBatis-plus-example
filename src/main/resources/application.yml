@@ -7,5 +7,8 @@ spring:
     password: kylin
     type: com.mysql.cj.jdbc.MysqlDataSource
 
+
 server:
   port: 9010
+mybatis-plus:
+  type-enums-package: com.example.mybatis.enums
