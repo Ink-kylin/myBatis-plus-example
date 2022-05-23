@@ -45,6 +45,9 @@ class MyBatisPlusExampleApplicationTests {
 
     @Test
     void  insert(){
+        String sq = "4、电力接入工程费用分担机制.docx";
+        System.out.println(sq.substring(sq.indexOf("、") + 1) );
+
 
     }
 
