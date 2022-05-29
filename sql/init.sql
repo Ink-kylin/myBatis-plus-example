@@ -1,4 +1,3 @@
--- auto-generated definition
 CREATE TABLE user_info
 (
     user_id BIGINT AUTO_INCREMENT COMMENT '编号'
