@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.mybatis.mapper.DemoMapper">
+<mapper namespace="com.example.mybatis.mapper.UserInfoMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.example.mybatis.entity.Demo">
-        <id column="id" property="id" />
+    <resultMap id="BaseResultMap" type="com.example.mybatis.entity.UserInfo">
+        <id column="user_id" property="userId" />
         <result column="name" property="name" />
         <result column="age" property="age" />
-        <result column="birth_date" property="birthDate" />
-        <result column="money" property="money" />
+        <result column="grade" property="grade" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, name, age, birth_date, money
+        user_id, name, age, grade
     </sql>
 
 </mapper>

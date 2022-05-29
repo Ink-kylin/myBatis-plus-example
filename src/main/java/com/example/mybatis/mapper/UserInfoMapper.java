@@ -1,6 +1,6 @@
 package com.example.mybatis.mapper;
 
-import com.example.mybatis.entity.Demo;
+import com.example.mybatis.entity.UserInfo;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -9,10 +9,9 @@ import org.apache.ibatis.annotations.Mapper;
  *  Mapper 接口
  * </p>
  *
- * @author kylin
- * @since 2022-05-12
+ * @author Inkylin
+ * @since 2022-05-29
  */
-@Mapper
-public interface DemoMapper extends BaseMapper<Demo> {
+public interface UserInfoMapper extends BaseMapper<UserInfo> {
 
 }

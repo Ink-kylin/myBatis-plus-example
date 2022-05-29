@@ -1,14 +1,26 @@
 # DataSource Config
 spring:
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/laboratory?characterEncoding=utf8&connectTimeout=1000&socketTimeout=100002&autoReconnect=true&useUnicode=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
-    username: albert
-    password: kylin
-    type: com.mysql.cj.jdbc.MysqlDataSource
+    type: org.mariadb.jdbc.MariaDbDataSource
+    druid:
+      url: jdbc:mariadb://localhost:3306/mybatis_example
+      username: albert
+      password: kylin
+      driver-class-name: org.mariadb.jdbc.Driver
+
 
 
 server:
   port: 9010
 mybatis-plus:
+  #扫描指定包
   type-enums-package: com.example.mybatis.enums
+  # 全局扫描枚举类
+#  configuration:
+#    default-enum-type-handler: com.baomidou.mybatisplus.core.handlers.MybatisEnumTypeHandler
+
+
+uqian:
+  url: jdbc:mysql://121.41.1.145:33065/ydyl?characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2b8
+  username: hzcx
+  password: hzyb@2021!@#

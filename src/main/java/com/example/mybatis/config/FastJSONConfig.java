@@ -23,7 +23,7 @@ public class FastJSONConfig {
      * @author albert
      *
      */
-    @Bean
+/*    @Bean
     public HttpMessageConverters fastJsonHttpMessageConverters() {
         FastJsonHttpMessageConverter fastJsonHttpMessageConverter = new FastJsonHttpMessageConverter();
         FastJsonConfig fastJsonConfig = new FastJsonConfig();
@@ -38,5 +38,5 @@ public class FastJSONConfig {
         );
         fastJsonHttpMessageConverter.setFastJsonConfig(fastJsonConfig);
         return new HttpMessageConverters(fastJsonHttpMessageConverter);
-    }
+    }*/
 }
