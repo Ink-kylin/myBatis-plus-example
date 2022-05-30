@@ -14,7 +14,7 @@ server:
   port: 9010
 mybatis-plus:
   #扫描指定包
-  type-enums-package: com.example.mybatis.enums
+  typeEnumsPackage: com.example.mybatis.enums
   # 全局扫描枚举类
 #  configuration:
 #    default-enum-type-handler: com.baomidou.mybatisplus.core.handlers.MybatisEnumTypeHandler

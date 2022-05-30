@@ -23,8 +23,8 @@ public enum GradeEnum {
     }
 
     @EnumValue
-    private final int code;
     @JsonValue
+    private final int code;
     private final String descp;
 
 

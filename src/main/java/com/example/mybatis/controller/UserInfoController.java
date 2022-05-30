@@ -23,9 +23,9 @@ public class UserInfoController {
 
 
 	@PostMapping
-	public ResponseEntity<String> create(@RequestBody UserInfo userInfo){
-		userInfoService.save(userInfo);
-		return ResponseEntity.ok().body(null);
+	public ResponseEntity<UserInfo> create(@RequestBody UserInfo userInfo){
+		//userInfoService.save(userInfo);
+		return ResponseEntity.ok().body(userInfo);
 	}
 
 	@GetMapping("/{userId}")
