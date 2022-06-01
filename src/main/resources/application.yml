@@ -21,6 +21,6 @@ mybatis-plus:
 
 
 uqian:
-  url: jdbc:mysql://121.41.1.145:33065/ydyl?characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2b8
+  url: jdbc:mysql://121.41.1.145:33065/wzfgdn?characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2b8
   username: hzcx
   password: hzyb@2021!@#
