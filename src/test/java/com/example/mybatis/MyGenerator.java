@@ -26,9 +26,8 @@ public class MyGenerator {
     private MyDatasourceProperties properties;
 
     @Test
-    void printinfo(){
-        AgeEnum one = AgeEnum.ONE;
-        System.out.println("one = " + one);
+    void printInfo(){
+        System.out.println("测试自动化构建");
 
     }
 
@@ -95,5 +94,6 @@ public class MyGenerator {
                 .templateEngine(new FreemarkerTemplateEngine())
                 .execute();
     }
+
 
 }
