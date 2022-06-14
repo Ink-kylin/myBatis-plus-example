@@ -13,6 +13,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.boot.test.context.SpringBootTest;
 import org.testcontainers.shaded.org.apache.commons.lang.text.StrBuilder;
 
+import java.util.ArrayList;
 import java.util.Collections;
 
 /**
@@ -36,56 +37,42 @@ public class MyGenerator {
         String url = properties.getUrl();
         String username = properties.getUsername();
         String password = properties.getPassword();
+        ArrayList<String> includeList = new ArrayList<>();
+        includeList.add("my_focus");
+        //includeList.add("content_manage");
+        includeList.add("party_build_leader_question");
+        includeList.add("project_construction_management");
+        includeList.add("supervise_official_document");
+        includeList.add("target");
         FastAutoGenerator.create(url,username,password)
                 .globalConfig(builder -> {
                     builder.author("Inkylin") // 设置作者
                             .enableSwagger()
-                            .outputDir("/home/albert/coding/java/MyBatis-Plus-Example/src/main/java")
+                            .outputDir("/home/albert/coding/company/wzfgdn/uqian-cloud-base/uqian-cloud-base-web/src/main/java")
                             .dateType(DateType.TIME_PACK)
                             .commentDate("yyyy-MM-dd");
                 })
                 .packageConfig(builder -> {
-                    builder.parent("com.example.mybatis")
-                            .pathInfo(Collections.singletonMap(OutputFile.xml,"/home/albert/coding/java/MyBatis-Plus-Example/src/main/resources/mapper"));
+                    builder.parent("com.uqian.framework.base.workbench")
+                            .entity("po")
+                            .pathInfo(Collections.singletonMap(OutputFile.xml,"/home/albert/coding/company/wzfgdn/uqian-cloud-base/uqian-cloud-base-web/src/main/resources/META-INF/mapper/mysql/workbench"));
                 })
-/*                .templateConfig(builder -> {
-                    // 设置父包名
-                    builder.entity("/mapper/entity.java")
-                            .service("/mapper/service.java")
-                            .serviceImpl("/mapper/serviceImpl.java")
-                            .mapper("/mapper/mapper.java")
-                            .xml("/mapper/mapper.xml")
-                            .controller("/mapper/controller.java")
-                            .build();
-                })*/
                 .strategyConfig(builder -> builder
-                        .addInclude("user_info")
+                        .addInclude(includeList)
                         //实体策略配置
                         .entityBuilder()
-                        //.logicDeletePropertyName("isDeleted")
+                        .logicDeletePropertyName("isDeleted")
                         //启用lombok
                         .enableLombok()
-                        //开启生成实体时生成字段注解
-                        //.enableTableFieldAnnotation()
-                        //开启 ActiveRecord 模型
-                        //.enableActiveRecord()
-                        //字段常量
-                        //.enableColumnConstant()
                         //开启链式模型
                         .enableChainModel()
                         .build()
-                        //controller策略
                         .controllerBuilder()
-                        //开启生成@RestController 控制器
                         .enableRestStyle()
                         .build()
-                        //service配置
                         .serviceBuilder()
                         .build()
-                        //mapper配置
                         .mapperBuilder()
-                        //开启@Mapper注解
-                        //.enableMapperAnnotation()
                         .enableBaseResultMap()
                         .enableBaseColumnList()
                         .build())

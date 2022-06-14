@@ -24,41 +24,40 @@ public class CompanyGenerator {
 	private YqComapnyProperties properties;
 
 
-	/*
-	* count must be an integer: strconv.Atoi: parsing "-p": invalid syntax
-
-	 * */
-/*	@Test
+	@Test
 	void format(){
 		String s = AgeEnum.ONE.name();
 		System.out.println(s);
 
 	}
 
+	/**
+	* @author albert
+	* @Description 温州调度台
+	* @Date 2022/6/14
+	* @Param
+	* @return void
+	**/
 	@Test
-	void workbench(){
+	void wz_dispatch(){
 		String url = properties.getUrl();
 		String username = properties.getUsername();
 		String password = properties.getPassword();
 		FastAutoGenerator.create(url, username,password)
 				.globalConfig(builder -> {
-					builder.author("albert") // 设置作者
-							// 开启 swagger 模式
+					builder.author("albert")
 							.enableSwagger()
-							// 指定输出目录
 							.outputDir("/home/albert/coding/company/wzfgdn/uqian-cloud-base/uqian-cloud-base-web/src/main/java")
-							//时间策略
 							.dateType(DateType.TIME_PACK)
-							//注释日期
 							.commentDate("yyyy-MM-dd");
 				})
 				.packageConfig(builder -> {
-					// 设置父包名
-					builder.parent("com.uqian.framework.base.workbench")
-							.pathInfo(Collections.singletonMap(OutputFile.xml,"/home/albert/coding/company/wzfgdn/uqian-cloud-base/uqian-cloud-base-web/src/main/resources/META-INF/mapper/mysql/workbench"));
+					builder.parent("com.uqian.framework.base.dispatch")
+							.entity("data")
+							.pathInfo(Collections.singletonMap(OutputFile.xml,"/home/albert/coding/company/wzfgdn/uqian-cloud-base/uqian-cloud-base-web/src/main/resources/META-INF/mapper/mysql/dispatch"));
 				})
 				.strategyConfig(builder -> builder
-						.addInclude("highlight_work")
+						.addInclude("key_target","business_menu","party_build_leader_question","work_joint","highlight_work","key_work")
 						//实体策略配置
 						.entityBuilder()
 						.logicDeletePropertyName("isDeleted")
@@ -83,7 +82,7 @@ public class CompanyGenerator {
 				// 使用Freemarker引擎模板，默认的是Velocity引擎模板
 				.templateEngine(new FreemarkerTemplateEngine())
 				.execute();
-	}*/
+	}
 
 
 }
