@@ -5,7 +5,7 @@ CREATE TABLE user_info
     name    VARCHAR(20) NULL COMMENT '用户名称',
     age     INT         NULL COMMENT '年龄',
     grade   INT         NULL COMMENT '学历',
-    CONSTRAINT user_user_id_uindex
+    CONSTRAINT user_user_id_index
         UNIQUE (user_id)
 );
 
